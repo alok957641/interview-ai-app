@@ -1,7 +1,6 @@
 import React from 'react'
-import { BsRobot, BsGithub, BsTwitter, BsLinkedin, BsEnvelope, BsInstagram } from 'react-icons/bs'
+import { BsRobot, BsGithub, BsTwitter, BsLinkedin, BsEnvelope, BsInstagram, BsWhatsapp } from 'react-icons/bs'
 import { FaHeart, FaCode } from 'react-icons/fa'
-import { FiGithub } from 'react-icons/fi'
 
 function Footer() {
   return (
@@ -38,8 +37,6 @@ function Footer() {
             </div>
           </div>
 
-    
-
           {/* Right - Social + Newsletter */}
           <div className='flex flex-col items-center md:items-end text-center md:text-right'>
             <h3 className='text-sm font-semibold text-gray-800 uppercase tracking-wider mb-3'>
@@ -49,15 +46,17 @@ function Footer() {
             {/* Social Icons - Bigger & Better */}
             <div className='flex flex-wrap justify-center md:justify-end gap-3'>
               {[
-                { icon: BsGithub, label: 'GitHub', color: 'hover:bg-gray-800 hover:text-white' },
-                { icon: BsTwitter, label: 'Twitter', color: 'hover:bg-blue-400 hover:text-white' },
-                { icon: BsLinkedin, label: 'LinkedIn', color: 'hover:bg-blue-600 hover:text-white' },
-                { icon: BsInstagram, label: 'Instagram', color: 'hover:bg-pink-600 hover:text-white' },
-                { icon: BsEnvelope, label: 'Email', color: 'hover:bg-red-500 hover:text-white' },
+                { icon: BsGithub, label: 'GitHub', link: 'https://github.com/alok957641', color: 'hover:bg-gray-800 hover:text-white' },
+                { icon: BsLinkedin, label: 'LinkedIn', link: 'https://www.linkedin.com/in/alok-kumar-304980314', color: 'hover:bg-blue-600 hover:text-white' },
+                { icon: BsInstagram, label: 'Instagram', link: 'https://www.instagram.com/code_with_alok69', color: 'hover:bg-pink-600 hover:text-white' },
+                { icon: BsWhatsapp, label: 'WhatsApp', link: 'https://wa.me/917541840606', color: 'hover:bg-green-600 hover:text-white' },
+                { icon: BsEnvelope, label: 'Email', link: 'mailto:alok957641@gmail.com', color: 'hover:bg-red-500 hover:text-white' },
               ].map((Social, idx) => (
                 <a
                   key={idx}
-                  href='#'
+                  href={Social.link}
+                  target='_blank'
+                  rel='noopener noreferrer'
                   className={`p-2.5 rounded-xl bg-white border border-gray-200 text-gray-500 ${Social.color} transition-all duration-300 hover:-translate-y-1 hover:shadow-lg`}
                   aria-label={Social.label}
                 >
@@ -66,7 +65,7 @@ function Footer() {
               ))}
             </div>
 
-            {/* Made with Love - Alok*/}
+            {/* Made with Love - Alok */}
             <div className='mt-4 flex items-center gap-2 text-xs text-gray-400'>
               <span>© 2026</span>
               <span className='w-1 h-1 bg-gray-300 rounded-full'></span>
