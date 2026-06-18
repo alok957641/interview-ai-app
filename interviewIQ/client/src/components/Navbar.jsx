@@ -133,7 +133,7 @@ function Navbar() {
                             <motion.div 
                                 initial={{opacity: 0, scale: 0.95, y: -10}}
                                 animate={{opacity: 1, scale: 1, y: 0}}
-                                className='absolute right-0 mt-3 w-52 sm:w-56 bg-white shadow-2xl shadow-gray-200/50 border border-gray-100 rounded-2xl p-4 z-50'
+                                className='absolute right-0 mt-3 w-52 sm:w-56 bg-white shadow-2xl shadow-gray-200/50 border border-gray-100 rounded-2xl p-4 z-500'
                             >
                                 <div className='flex items-center gap-3 pb-3 border-b border-gray-100'>
                                     <div className='w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-500 text-white rounded-full flex items-center justify-center font-bold text-sm'>
