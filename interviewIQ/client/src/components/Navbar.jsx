@@ -86,34 +86,41 @@ function Navbar() {
 
                         {/* Credits Popup */}
                         {showCreditPopup && (
-                            <motion.div 
-                                initial={{opacity: 0, scale: 0.95, y: -10}}
-                                animate={{opacity: 1, scale: 1, y: 0}}
-                                className='absolute right-0 sm:right-[-10px] mt-3 w-64 sm:w-72 bg-white shadow-2xl shadow-gray-200/50 border border-gray-100 rounded-2xl p-5 z-50'
-                            >
-                                <div className='flex items-center gap-2 mb-3'>
-                                    <BsStars className='text-yellow-500' />
-                                    <p className='text-sm font-medium text-gray-700'>Credit Balance</p>
-                                </div>
-                                <div className='bg-gradient-to-r from-amber-50 to-yellow-50 rounded-xl p-3 mb-4'>
-                                    <p className='text-2xl font-bold text-amber-700 text-center'>
-                                        {userData?.credits || 0}
-                                    </p>
-                                    <p className='text-xs text-amber-500 text-center'>Available Credits</p>
-                                </div>
-                                <p className='text-xs text-gray-500 mb-4 text-center'>Need more credits to continue interviews?</p>
-                                <button 
-                                    onClick={() => navigate("/pricing")} 
-                                    className='w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-2.5 rounded-xl text-sm font-medium hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300 hover:-translate-y-0.5'
+                            <>
+                                {/* Backdrop */}
+                                <div 
+                                    className='fixed inset-0 z-40' 
+                                    onClick={() => setShowCreditPopup(false)}
+                                />
+                                <motion.div 
+                                    initial={{opacity: 0, scale: 0.95, y: -10}}
+                                    animate={{opacity: 1, scale: 1, y: 0}}
+                                    className='absolute right-0 sm:right-[-10px] mt-3 w-64 sm:w-72 bg-white shadow-2xl shadow-gray-200/50 border border-gray-100 rounded-2xl p-5 z-50'
                                 >
-                                    Buy More Credits →
-                                </button>
-                            </motion.div>
+                                    <div className='flex items-center gap-2 mb-3'>
+                                        <BsStars className='text-yellow-500' />
+                                        <p className='text-sm font-medium text-gray-700'>Credit Balance</p>
+                                    </div>
+                                    <div className='bg-gradient-to-r from-amber-50 to-yellow-50 rounded-xl p-3 mb-4'>
+                                        <p className='text-2xl font-bold text-amber-700 text-center'>
+                                            {userData?.credits || 0}
+                                        </p>
+                                        <p className='text-xs text-amber-500 text-center'>Available Credits</p>
+                                    </div>
+                                    <p className='text-xs text-gray-500 mb-4 text-center'>Need more credits to continue interviews?</p>
+                                    <button 
+                                        onClick={() => navigate("/pricing")} 
+                                        className='w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-2.5 rounded-xl text-sm font-medium hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300 hover:-translate-y-0.5'
+                                    >
+                                        Buy More Credits →
+                                    </button>
+                                </motion.div>
+                            </>
                         )}
                     </div>
 
                     {/* User Profile */}
-                    <div className='relative'>
+                    <div className='relative z-50'>
                         <button
                             onClick={() => {
                                 if(!userData) {
@@ -130,50 +137,57 @@ function Navbar() {
 
                         {/* User Popup */}
                         {showUserPopup && (
-                            <motion.div 
-                                initial={{opacity: 0, scale: 0.95, y: -10}}
-                                animate={{opacity: 1, scale: 1, y: 0}}
-                                className='absolute right-0 mt-3 w-52 sm:w-56 bg-white shadow-2xl shadow-gray-200/50 border border-gray-100 rounded-2xl p-4 z-500'
-                            >
-                                <div className='flex items-center gap-3 pb-3 border-b border-gray-100'>
-                                    <div className='w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-500 text-white rounded-full flex items-center justify-center font-bold text-sm'>
-                                        {userData?.name.slice(0,1).toUpperCase()}
-                                    </div>
-                                    <div>
-                                        <p className='text-sm font-semibold text-gray-800'>{userData?.name}</p>
-                                        <p className='text-xs text-gray-400'>{userData?.email}</p>
-                                    </div>
-                                </div>
-                                
-                                <div className='py-2 space-y-1'>
-                                    <button 
-                                        onClick={() => {
-                                            navigate("/history")
-                                            setShowUserPopup(false)
-                                        }} 
-                                        className='w-full text-left text-sm py-2 px-3 rounded-lg hover:bg-gray-50 text-gray-600 hover:text-gray-900 transition-colors'
-                                    >
-                                        📊 Interview History
-                                    </button>
-                                    <button 
-                                        onClick={() => {
-                                            navigate("/pricing")
-                                            setShowUserPopup(false)
-                                        }} 
-                                        className='w-full text-left text-sm py-2 px-3 rounded-lg hover:bg-gray-50 text-gray-600 hover:text-gray-900 transition-colors'
-                                    >
-                                        💳 Buy Credits
-                                    </button>
-                                </div>
-                                
-                                <button 
-                                    onClick={handleLogout} 
-                                    className='w-full text-left text-sm py-2.5 px-3 rounded-lg bg-red-50 text-red-500 hover:bg-red-100 transition-colors flex items-center gap-2 mt-1 border border-red-100'
+                            <>
+                                {/* Backdrop */}
+                                <div 
+                                    className='fixed inset-0 z-40' 
+                                    onClick={() => setShowUserPopup(false)}
+                                />
+                                <motion.div 
+                                    initial={{opacity: 0, scale: 0.95, y: -10}}
+                                    animate={{opacity: 1, scale: 1, y: 0}}
+                                    className='absolute right-0 mt-3 w-52 sm:w-56 bg-white shadow-2xl shadow-gray-200/50 border border-gray-100 rounded-2xl p-4 z-50'
                                 >
-                                    <HiOutlineLogout size={16} />
-                                    Logout
-                                </button>
-                            </motion.div>
+                                    <div className='flex items-center gap-3 pb-3 border-b border-gray-100'>
+                                        <div className='w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-500 text-white rounded-full flex items-center justify-center font-bold text-sm'>
+                                            {userData?.name.slice(0,1).toUpperCase()}
+                                        </div>
+                                        <div>
+                                            <p className='text-sm font-semibold text-gray-800'>{userData?.name}</p>
+                                            <p className='text-xs text-gray-400'>{userData?.email}</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div className='py-2 space-y-1'>
+                                        <button 
+                                            onClick={() => {
+                                                navigate("/history")
+                                                setShowUserPopup(false)
+                                            }} 
+                                            className='w-full text-left text-sm py-2 px-3 rounded-lg hover:bg-gray-50 text-gray-600 hover:text-gray-900 transition-colors'
+                                        >
+                                            📊 Interview History
+                                        </button>
+                                        <button 
+                                            onClick={() => {
+                                                navigate("/pricing")
+                                                setShowUserPopup(false)
+                                            }} 
+                                            className='w-full text-left text-sm py-2 px-3 rounded-lg hover:bg-gray-50 text-gray-600 hover:text-gray-900 transition-colors'
+                                        >
+                                            💳 Buy Credits
+                                        </button>
+                                    </div>
+                                    
+                                    <button 
+                                        onClick={handleLogout} 
+                                        className='w-full text-left text-sm py-2.5 px-3 rounded-lg bg-red-50 text-red-500 hover:bg-red-100 transition-colors flex items-center gap-2 mt-1 border border-red-100'
+                                    >
+                                        <HiOutlineLogout size={16} />
+                                        Logout
+                                    </button>
+                                </motion.div>
+                            </>
                         )}
                     </div>
                 </div>
