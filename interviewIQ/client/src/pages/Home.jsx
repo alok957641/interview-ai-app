@@ -86,14 +86,25 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-[#f3f3f3] flex flex-col">
-      <Navbar />
+      {/* Navbar with higher z-index */}
+      <div className="relative z-[100]">
+        <Navbar />
+      </div>
 
       <style>{`
         @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
         @keyframes floatA { 0%,100%{transform:translate(0,0)} 50%{transform:translate(30px,20px)} }
         @keyframes floatB { 0%,100%{transform:translate(0,0)} 50%{transform:translate(-25px,30px)} }
         @keyframes floatC { 0%,100%{transform:translate(0,0)} 50%{transform:translate(20px,-25px)} }
-        .blob { position:absolute; border-radius:50%; filter:blur(80px); pointer-events:none; }
+        
+        /* ✅ FIX: Blobs ko navbar ke neeche */
+        .blob { 
+          position:absolute; 
+          border-radius:50%; 
+          filter:blur(80px); 
+          pointer-events:none; 
+          z-index: 0; 
+        }
         .blob1 { width:500px;height:500px;background:#ddd6fe;opacity:0.55;top:-100px;left:-100px;animation:floatA 14s ease-in-out infinite; }
         .blob2 { width:400px;height:400px;background:#a7f3d0;opacity:0.45;bottom:-60px;right:-60px;animation:floatB 18s ease-in-out infinite; }
         .blob3 { width:300px;height:300px;background:#fecdd3;opacity:0.35;top:35%;left:55%;animation:floatC 22s ease-in-out infinite; }
