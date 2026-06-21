@@ -64,12 +64,13 @@
 ![Home Page]<img width="1856" height="862" alt="Screenshot 2026-06-21 215543" src="https://github.com/user-attachments/assets/39e79476-edae-49c4-bcb3-f21887f4be6b" />
 
 ### 🎙️ Interview Session
-![Interview]<img width="1868" height="859" alt="Screenshot 2026-06-21 215952" src="https://github.com/user-attachments/assets/cfaf698b-5f01-4bc2-9059-825376213cd4" />
+![Interview]<img width="1608" height="848" alt="Screenshot 2026-06-21 215907" src="https://github.com/user-attachments/assets/43c407ad-14b2-4fde-a9a5-99405b08a1ef" />
 
 
 
 ### 📊 Performance Report
-![Report]!<img width="1608" height="848" alt="Screenshot 2026-06-21 215907" src="https://github.com/user-attachments/assets/43c407ad-14b2-4fde-a9a5-99405b08a1ef" />
+![Report]!
+<img width="1868" height="859" alt="Screenshot 2026-06-21 215952" src="https://github.com/user-attachments/assets/cfaf698b-5f01-4bc2-9059-825376213cd4" />
 
 
 </div>
