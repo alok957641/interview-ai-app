@@ -232,10 +232,9 @@ This project is licensed under the MIT License — see the [LICENSE](LICENSE) fi
 
 **Your Name**
 
-- 🌐 [Website](https://your-website.com)
-- 🐦 [Twitter](https://twitter.com/your-handle)
+- 🌐 [Website](https://dev-alok.netlify.app/)
 - 📧 [Email](mailto:your-email@example.com)
-- 💼 [LinkedIn](https://linkedin.com/in/your-profile)
+- 💼 [LinkedIn](linkedin.com/in/alokkumar-fullstack)
 
 ---
 
